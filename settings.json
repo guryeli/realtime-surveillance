@@ -1,0 +1,90 @@
+{
+  "camera": {
+    "source": 0,
+    "source_str": "",
+    "target_width": 1280,
+    "target_height": 720,
+    "output_resolution": "720p",
+    "fps_cap": 30,
+    "debug_video_enabled": false,
+    "debug_video_path": "",
+    "debug_video_loop": true,
+    "debug_video_sync_realtime": true
+  },
+  "performance": {
+    "device": "auto",
+    "use_cpu": true,
+    "use_gpu": true,
+    "frame_skip": 0,
+    "enable_half_precision": false,
+    "seed": 42
+  },
+  "alerts": {
+    "save_screenshots": true,
+    "save_json": true,
+    "play_sound": true,
+    "sound_file": "alarm.wav",
+    "detections_dir": "detections",
+    "banner_duration_seconds": 4.0
+  },
+  "anomaly": {
+    "enabled": false,
+    "yolo_model": "yolov8m.pt",
+    "method": "both",
+    "conf_threshold": 0.18,
+    "iou_threshold": 0.45,
+    "imgsz": 960,
+    "max_det": 300,
+    "max_expected_people": 30,
+    "max_people_per_cell": 15,
+    "grid_rows": 3,
+    "grid_cols": 3,
+    "running_speed_pixels_per_sec": 200.0,
+    "panic_running_ratio": 0.3,
+    "panic_min_runners": 3,
+    "panic_min_total_people": 5,
+    "flow_high_magnitude": 3.0,
+    "flow_panic_cell_ratio": 0.1,
+    "flow_low_entropy_thresh": 1.5,
+    "flow_baseline_frames": 60,
+    "alarm_persistence_seconds": 1.0,
+    "alarm_cooldown_seconds": 3.0,
+    "speed_history_maxlen": 12
+  },
+  "weapon": {
+    "enabled": false,
+    "yolo_model": "yolov8l_weapon_best.pt",
+    "conf_threshold": 0.4,
+    "iou_threshold": 0.45,
+    "min_consecutive_frames": 2
+  },
+  "abandoned": {
+    "enabled": false,
+    "yolo_model": "yolov8m.pt",
+    "conf_threshold": 0.3,
+    "iou_threshold": 0.45,
+    "person_class_id": 0,
+    "bag_class_ids": [
+      24,
+      26,
+      28
+    ],
+    "ownership_distance_thresh": 80.0,
+    "detach_distance_thresh": 150.0,
+    "abandonment_seconds": 5.0
+  },
+  "face_detect": {
+    "enabled": false,
+    "yolo_model": "yolov8l-face.pt",
+    "conf_threshold": 0.3,
+    "iou_threshold": 0.45,
+    "min_face_size": 24
+  },
+  "face_match": {
+    "enabled": false,
+    "arcface_model": "buffalo_l",
+    "similarity_threshold": 0.5,
+    "gallery_paths": [],
+    "rebuild_gallery": true
+  }
+}
